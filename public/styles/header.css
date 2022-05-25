@@ -1,0 +1,9 @@
+header {
+  height: 400px;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url("/images/header-background.png");
+}
