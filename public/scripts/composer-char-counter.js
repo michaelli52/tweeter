@@ -8,7 +8,6 @@ $(document).ready(function() {
     } else {
       $counter.removeClass('invalid');
     }
-    console.log($counter);
     $counter.val(140 - textLength);
   })
 
