@@ -43,7 +43,7 @@ const renderTweets = function(tweets) {
   }
 };
 
-const loadTweets = function() {
+export const loadTweets = function() {
   $.get('/tweets', (data) => {
     renderTweets(data.reverse());
   });
@@ -57,35 +57,4 @@ const escapeText = function (str) {
 
 $(document).ready(function() {
   loadTweets();
-
-  const $form = $('.new-tweet').children('form');
-
-  $form.submit(function(event) {
-    
-    const inputText = $('#tweet-text').val();
-    if (inputText.length > 0 && inputText.length <= 140) {
-      $('.warning').slideUp();
-      $.post('/tweets', $(this).serialize())
-      .then(function() {
-        $('.tweet-container').empty();
-        $('#tweet-text').val('');
-        loadTweets();
-      });
-    }
-    if (inputText.length > 140) {
-      $('.warning').slideUp(() => {
-        $('.warning').children('text').text('Exceeded maximum of characters');
-        $('.warning').slideDown();
-      });
-      
-    }
-    if (inputText.length === 0) {
-      $('.warning').slideUp(() => {
-        $('.warning').children('text').text('Input can not be empty');
-        $('.warning').slideDown();
-      });
-    }
-    event.preventDefault();
-  });
 });
-

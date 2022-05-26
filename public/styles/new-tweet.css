@@ -1,5 +1,6 @@
 main .new-tweet {
   padding-bottom: 50px;
+  display: none;
 }
 
 main textarea {

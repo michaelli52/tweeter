@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  
   $('#tweet-text').on('input', function() {
     const textLength = $(this).val().length;
     const $counter = $(this).parent().children('div').children('output');
@@ -12,3 +12,4 @@ $(document).ready(function() {
   })
 
 });
+
