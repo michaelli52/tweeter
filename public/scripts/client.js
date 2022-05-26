@@ -18,7 +18,7 @@ const createTweetElement = function(tweet) {
         </div>
       </header>
       <text>
-        ${tweet.content.text}
+        ${escapeText(tweet.content.text)}
       </text>
       <footer>
         <div>
@@ -49,6 +49,12 @@ const loadTweets = function() {
   });
 };
 
+const escapeText = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 $(document).ready(function() {
   loadTweets();
 
@@ -60,6 +66,7 @@ $(document).ready(function() {
       $.post('/tweets', $(this).serialize())
       .then(function() {
         $('.tweet-container').empty();
+        $('#tweet-text').val('');
         loadTweets();
       });
     }
