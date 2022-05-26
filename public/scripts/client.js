@@ -56,5 +56,5 @@ const escapeText = function (str) {
 };
 
 $(document).ready(function() {
-  loadTweets();
+  loadTweets(); 
 });

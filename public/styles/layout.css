@@ -28,6 +28,24 @@ main {
   padding-bottom: 50px;
 }
 
+#scroll-to-top {
+  display: none;
+  font-size: 80px;
+  border-radius: 50%;
+  background-color: white;
+  color: rgb(248, 62, 52);
+
+  /* Make fix at fixed at the rightleft corner */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#scroll-to-top:hover {
+  color: red;
+  text-shadow: 2px 2px grey;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
