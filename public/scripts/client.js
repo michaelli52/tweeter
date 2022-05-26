@@ -45,7 +45,7 @@ const renderTweets = function(tweets) {
 
 const loadTweets = function() {
   $.get('/tweets', (data) => {
-    renderTweets(data);
+    renderTweets(data.reverse());
   });
 };
 
@@ -57,10 +57,17 @@ $(document).ready(function() {
   $form.submit(function(event) {
     const inputText = $('#tweet-text').val();
     if (inputText.length > 0 && inputText.length <= 140) {
-      $.post('/tweets', $(this).serialize());
+      $.post('/tweets', $(this).serialize())
+      .then(function() {
+        $('.tweet-container').empty();
+        loadTweets();
+      });
     }
     if (inputText.length > 140) {
-      alert('Exceeded Maximum of Characters.');
+      alert('Exceeded maximum of characters.');
+    }
+    if (inputText.length === 0) {
+      alert('Input can not be empty.')
     }
     event.preventDefault();
   });
