@@ -1,6 +1,5 @@
 body > header {
-  height: 400px;
-  z-index: -1;
+  padding-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;

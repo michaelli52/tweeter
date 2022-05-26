@@ -10,11 +10,11 @@ const createTweetElement = function(tweet) {
     <article class="tweet">
       <header>
         <div>
-          <img src="${tweet.user.avatars}"/>
-          <label>${tweet.user.name}</label>
+          <img src="${escapeText(tweet.user.avatars)}"/>
+          <label>${escapeText(tweet.user.name)}</label>
         </div>
         <div class="handle">
-          ${tweet.user.handle}
+          ${escapeText(tweet.user.handle)}
         </div>
       </header>
       <text>
@@ -61,8 +61,10 @@ $(document).ready(function() {
   const $form = $('.new-tweet').children('form');
 
   $form.submit(function(event) {
+    
     const inputText = $('#tweet-text').val();
     if (inputText.length > 0 && inputText.length <= 140) {
+      $('.warning').slideUp();
       $.post('/tweets', $(this).serialize())
       .then(function() {
         $('.tweet-container').empty();
@@ -71,10 +73,17 @@ $(document).ready(function() {
       });
     }
     if (inputText.length > 140) {
-      alert('Exceeded maximum of characters.');
+      $('.warning').slideUp(() => {
+        $('.warning').children('text').text('Exceeded maximum of characters');
+        $('.warning').slideDown();
+      });
+      
     }
     if (inputText.length === 0) {
-      alert('Input can not be empty.')
+      $('.warning').slideUp(() => {
+        $('.warning').children('text').text('Input can not be empty');
+        $('.warning').slideDown();
+      });
     }
     event.preventDefault();
   });

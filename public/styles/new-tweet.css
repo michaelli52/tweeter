@@ -12,10 +12,21 @@ main textarea {
   border-bottom-width: 2px;
 }
 
-main div {
+main div.submit {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+main div.warning {
+  display: none;
+  color: red;
+  font-size: 0.65em;
+  font-style: normal;
+  font-weight: bold;
+  border: 2px solid red;
+  padding: 5px;
+  margin-top: 10px;
 }
 
 main button {
