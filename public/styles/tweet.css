@@ -1,13 +1,21 @@
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+}
+
 article.tweet {
+  width: 100%;
   border: 2px solid black;
   background-color: #f4f1ec;
   margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 20px;
   display: flex;
   flex-direction: column;
 }
 
-article.hover {
+article:hover {
   box-shadow: 6px 6px cornflowerblue;
 }
 
@@ -16,6 +24,11 @@ article.tweet header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+}
+
+article.tweet header div {
+  align-items: center;
 }
 
 article.tweet text {
@@ -33,11 +46,11 @@ article.tweet footer {
   justify-content: space-between;
 }
 
-div.handler {
+div.handle {
   color:cornflowerblue;
 }
 
-article.tweet header .fa-solid {
+article.tweet header img {
   padding-right: 10px;
 }
 
@@ -47,6 +60,6 @@ article.tweet footer .fa-solid {
   margin-right: 5px;
 }
 
-article.tweet footer .hover {
+article.tweet footer .fa-solid:hover {
   color: goldenrod;
 }
