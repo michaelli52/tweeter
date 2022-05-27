@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  
+
+  // Dynamic display of the number of characters
   $('#tweet-text').on('input', function() {
     const textLength = $(this).val().length;
     const $counter = $(this).parent().children('div').children('output');

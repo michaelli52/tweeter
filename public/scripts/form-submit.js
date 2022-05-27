@@ -2,6 +2,7 @@ import { loadTweets } from './client.js';
 
 $(document).ready(function() {
 
+  // Handle tweet submit and show error message if input is empty or text length is more than 140 characters.
   const $form = $('.new-tweet').children('form');
   $form.submit(function(event) {
     $('.warning').slideUp();
@@ -26,10 +27,12 @@ $(document).ready(function() {
     event.preventDefault();
   });
 
+  // Clear error message when ready to type again
   $('#tweet-text').focus(function() {
     $('.warning').slideUp();
   })
 
+  // Toggle new tweet textarea when click button. Focus on textarea automatically when shown.
   $('.nav-right').click(function() {
     $('.new-tweet').slideToggle(function() {
       $('#tweet-text').focus();

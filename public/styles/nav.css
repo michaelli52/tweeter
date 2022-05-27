@@ -1,5 +1,8 @@
+/*
+ * Navagation bar layout and style
+ */
 nav {
-  height: 80px;
+  height: 70px;
   color: #FFFFFF;
   background-color: #4056A1;
   padding-left: 1.5em;
@@ -41,4 +44,15 @@ nav span {
 
 nav .fa-solid {
   color: red;
+}
+
+.nav-right > div {
+  font-size: 0px;
+}
+
+/* For Tablet and Desktop Device */
+@media screen and (min-width: 360px) {
+  .nav-right > div {
+    font-size: 18px;
+  }
 }

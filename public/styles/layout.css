@@ -28,6 +28,7 @@ main {
   padding-bottom: 50px;
 }
 
+/* Scroll to top button */
 #scroll-to-top {
   display: none;
   font-size: 80px;

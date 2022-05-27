@@ -1,3 +1,6 @@
+/*
+ * Header layout
+ */
 body > header {
   padding-top: 100px;
   display: flex;
@@ -6,3 +9,25 @@ body > header {
   flex-direction: column;
   background-image: url("/images/header-background.png");
 }
+
+/* For Tablet and Desktop Device */
+@media screen and (min-width: 768px) {
+  body {
+    padding-top: 150px;
+  }
+  
+  body > header {
+    margin-left: 5%;
+    margin-right: 3%;
+    width: 40%;
+    float: left;
+  }
+  
+  main {
+    margin-left: 3%;
+    margin-right: 5%;
+    width: 40%;
+    float: right;
+  }
+}
+

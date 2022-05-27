@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// Create a JQuery html element from a tweet data object
 const createTweetElement = function(tweet) {
   const $tweetElement = $(
     `
@@ -36,6 +37,7 @@ const createTweetElement = function(tweet) {
   return $tweetElement;
 };
 
+// Create html elements for all tweets and append them to the tweet container
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const $tweetElement = createTweetElement(tweet);
@@ -43,12 +45,14 @@ const renderTweets = function(tweets) {
   }
 };
 
+// Reverse the tweet data and show all on screen
 export const loadTweets = function() {
   $.get('/tweets', (data) => {
     renderTweets(data.reverse());
   });
 };
 
+// Validate input text from cross-scripting attack
 const escapeText = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
