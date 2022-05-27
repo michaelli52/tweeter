@@ -16,7 +16,7 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-image: url("/images/background.png");
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -24,7 +24,6 @@ body {
 main {
   margin: auto;
   width: 90%;
-  background-color: #f4f1ec;
   padding-bottom: 50px;
 }
 

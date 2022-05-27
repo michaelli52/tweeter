@@ -4,7 +4,7 @@
 nav {
   height: 70px;
   color: #FFFFFF;
-  background-color: #4056A1;
+  background-color: #204ecf;
   padding-left: 1.5em;
   padding-right: 1.5em;
   display: flex;
@@ -32,7 +32,6 @@ nav span {
   align-items: center;
   
   font-size: 18px;
-  font-weight: bold;
   border-radius: 5px;
   cursor: default;
 }
@@ -44,6 +43,12 @@ nav span {
 
 nav .fa-solid {
   color: red;
+  animation: jump 1.5s infinite;
+}
+
+/* Bounce animation */
+@keyframes jump {
+  50% {transform: translateY(5px);}
 }
 
 .nav-right > div {

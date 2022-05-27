@@ -18,7 +18,6 @@ $(document).ready(function() {
     if (inputText.length > 140) {
       $('.warning').children('text').text('Exceeded maximum number of characters');
       $('.warning').slideDown();
-      
     }
     if (inputText.length === 0) {
       $('.warning').children('text').text('Input can not be empty');

@@ -1,12 +1,18 @@
+/*
+ * Tweet container layout
+ */
 .tweet-container {
   display: flex;
   flex-direction: column;
 }
 
+/*
+ * Individual tweet block layout
+ */
 article.tweet {
   width: 100%;
   border: 2px solid black;
-  background-color: #f4f1ec;
+  background-color: white;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -28,6 +34,8 @@ article.tweet header {
 }
 
 article.tweet header div {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -55,11 +63,18 @@ article.tweet header img {
 }
 
 article.tweet footer .fa-solid {
-  color: #4056A1;
+  color: #204ecf;
   margin-left: 5px;
   margin-right: 5px;
 }
 
 article.tweet footer .fa-solid:hover {
   color: goldenrod;
+}
+
+/* For Tablet and Desktop Device */
+@media screen and (min-width: 360px) {
+  article.tweet header div {
+    flex-direction: row;
+  }
 }

@@ -4,7 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// Create a JQuery html element from a tweet data object
+// Create a JQuery html object from a single tweet data object
 const createTweetElement = function(tweet) {
   const $tweetElement = $(
     `
@@ -60,5 +60,5 @@ const escapeText = function (str) {
 };
 
 $(document).ready(function() {
-  loadTweets(); 
+  loadTweets();
 });
