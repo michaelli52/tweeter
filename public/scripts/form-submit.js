@@ -7,11 +7,13 @@ $(document).ready(function() {
   $form.submit(function(event) {
     $('.warning').slideUp();
     const inputText = $('#tweet-text').val();
+    const $counter = $('#tweet-text').parent().children('div').children('output');
     if (inputText.length > 0 && inputText.length <= 140) {
       $.post('/tweets', $(this).serialize())
       .then(function() {
         $('.tweet-container').empty();
         $('#tweet-text').val('');
+        $counter.val(140);
         loadTweets();
       });
     }
